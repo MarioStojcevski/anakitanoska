@@ -25,9 +25,7 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://react.dev" target="_blank">
-          <img src={"./cutes.png"} className="logo cutes" />
-        </a>
+        <img src="./cutes.png" className="logo cutes" />
       </div>
       <h1>{"Ана <3 Марио"}</h1>
       <div className="card">
