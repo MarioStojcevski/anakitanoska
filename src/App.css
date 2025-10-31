@@ -1,0 +1,70 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo.cutes:hover {
+  filter: drop-shadow(0 0 2em #ff00eaaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.time-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.time-box div {
+  background: linear-gradient(145deg, #ff83ea, #a661ff);
+  box-shadow: 2px #ff878d, -5px -5px 15px #ffacea;
+  border-radius: 15px;
+  padding: 20px;
+  min-width: 30px;
+  height: 50;
+  transition: all 0.2s ease-in-out;
+}
+
+.time-box div:hover {
+  transform: translateY(-4px);
+}
+
+.time-box span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 1000;
+  color: #ffffff;
+}
+
+.time-box small {
+  display: block;
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-top: 5px;
+}
