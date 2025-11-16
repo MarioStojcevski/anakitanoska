@@ -13,7 +13,7 @@
 }
 
 .logo.cutes:hover {
-  filter: drop-shadow(0 0 2em #ff00eaaa);
+  filter: drop-shadow(0 0 2em #ffc505aa);
 }
 
 @keyframes logo-spin {
