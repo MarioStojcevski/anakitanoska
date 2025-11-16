@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <div>
-        <img src="./cutes.png" className="logo cutes" />
+        <img src="./blob.webp" className="logo cutes" />
       </div>
       <h1>{"Ана <3 Марио"}</h1>
       <div className="card">
