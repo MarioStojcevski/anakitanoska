@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
-  const arrival = new Date("2025-12-20T18:25:00").getTime();
+  const arrival = new Date("2025-12-19T18:25:00").getTime();
   const [timeLeft, setTimeLeft] = useState(arrival - Date.now());
   const [showTime, setShowTime] = useState(false);
 
@@ -19,8 +19,6 @@ function App() {
   const hours = Math.floor((totalSec % 86400) / 3600);
   const minutes = Math.floor((totalSec % 3600) / 60);
   const seconds = totalSec % 60;
-
-  console.log(timeLeft);
 
   return (
     <>
