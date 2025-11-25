@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
-  const arrival = new Date("2025-12-19T18:25:00").getTime();
+  const arrival = new Date("2025-12-24T18:25:00").getTime();
   const [timeLeft, setTimeLeft] = useState(arrival - Date.now());
   const [showTime, setShowTime] = useState(false);
 
