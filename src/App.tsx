@@ -27,7 +27,10 @@ function App() {
       </div>
       <h1>{"Ана <3 Марио"}</h1>
       <div className="card">
-        <button onClick={() => setShowTime(true)}>
+        <button onClick={() => {
+          alert('We are having some issues with the services. The data may be inaccurate. Please try again later.');
+          setShowTime(true);
+        }}>
           Уште колку има
         </button>
         <p>
