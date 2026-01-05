@@ -1,0 +1,73 @@
+.countdown-button {
+  position: relative;
+  border-radius: 4px;
+  border: var(--border-thick) solid var(--accent-primary);
+  padding: 1.25rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-family: inherit;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px) saturate(180%);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: visible;
+  letter-spacing: 0.05em;
+  min-width: 220px;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-brutal) var(--accent-primary);
+  animation: buttonEnter 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes buttonEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.countdown-button.button-exit {
+  animation: buttonExit 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19) forwards;
+}
+
+@keyframes buttonExit {
+  from {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.3) rotate(180deg);
+  }
+}
+
+.countdown-button:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px var(--accent-primary);
+  background: var(--bg-glass-hover);
+  border-color: var(--accent-primary);
+}
+
+.countdown-button:active {
+  transform: translate(0, 0);
+  box-shadow: var(--shadow-brutal) var(--accent-primary);
+}
+
+.button-text {
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.button-shine {
+  display: none;
+}
+
+.countdown-button:focus,
+.countdown-button:focus-visible {
+  outline: none;
+}

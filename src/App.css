@@ -1,71 +1,49 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  position: relative;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 800px;
+  animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.logo.cutes:hover {
-  filter: drop-shadow(0 0 2em #ffc505aa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.time-box {
+.button-timer-container {
+  position: relative;
+  width: 100%;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  min-height: 80px;
 }
 
-.time-box div {
-  background: linear-gradient(145deg, #ff83ea, #a661ff);
-  box-shadow: 2px #ff878d, -5px -5px 15px #ffacea;
-  border-radius: 15px;
-  padding: 10px;
-  padding-bottom: 30px;
-  min-width: 30px;
-  height: 50px;
-  transition: all 0.2s ease-in-out;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.time-box div:hover {
-  transform: translateY(-4px);
-}
-
-.time-box span {
-  display: block;
-  font-size: 2rem;
-  font-weight: 1000;
-  color: #ffffff;
-}
-
-.time-box small {
-  display: block;
-  font-size: 0.9rem;
-  color: #ffffff;
-  margin-top: 5px;
+@media (max-width: 768px) {
+  .app {
+    padding: 2rem 1.5rem;
+  }
+  
+  .main-content {
+    gap: 2rem;
+  }
 }
