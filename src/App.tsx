@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { useCountdown } from './hooks/useCountdown'
 import { Header, CountdownButton, TimeDisplay, LocationCard } from './components'
 import './App.css'
+import { TARGET_ARRIVAL_TIME } from './constants/targetDate'
 
 function App() {
-  const arrival = "2026-01-15T08:00:00"
-  const timeLeft = useCountdown(arrival)
+  const timeLeft = useCountdown(TARGET_ARRIVAL_TIME)
   const [showTime, setShowTime] = useState(false)
 
   const handleButtonClick = () => {

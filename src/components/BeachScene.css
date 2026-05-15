@@ -1,0 +1,199 @@
+.beach-scene {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* ===== SUN ===== */
+.sun {
+  position: absolute;
+  top: 3vh;
+  right: 4vw;
+  width: 260px;
+  height: 260px;
+  overflow: visible;
+  filter: drop-shadow(0 0 50px rgba(255, 184, 77, 0.6));
+  animation: sunFloat 7s ease-in-out infinite;
+}
+
+.sun-rays-group {
+  transform-origin: 18px 18px;
+  animation: sunSpin 60s linear infinite;
+}
+
+@keyframes sunSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sunFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ===== CLOUDS ===== */
+.clouds {
+  position: absolute;
+  inset: 0;
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  filter: blur(0.5px) drop-shadow(0 6px 20px rgba(120, 160, 220, 0.25));
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.cloud-1 {
+  top: 14vh;
+  left: -180px;
+  width: 160px;
+  height: 38px;
+  animation: drift 55s linear infinite;
+}
+.cloud-1::before {
+  width: 70px;
+  height: 70px;
+  top: -32px;
+  left: 22px;
+}
+.cloud-1::after {
+  width: 50px;
+  height: 50px;
+  top: -22px;
+  left: 80px;
+}
+
+.cloud-2 {
+  top: 30vh;
+  left: -260px;
+  width: 220px;
+  height: 46px;
+  opacity: 0.9;
+  animation: drift 80s linear infinite;
+  animation-delay: -20s;
+}
+.cloud-2::before {
+  width: 90px;
+  height: 90px;
+  top: -42px;
+  left: 30px;
+}
+.cloud-2::after {
+  width: 64px;
+  height: 64px;
+  top: -28px;
+  left: 110px;
+}
+
+.cloud-3 {
+  top: 8vh;
+  left: -200px;
+  width: 130px;
+  height: 32px;
+  opacity: 0.75;
+  animation: drift 95s linear infinite;
+  animation-delay: -55s;
+}
+.cloud-3::before {
+  width: 56px;
+  height: 56px;
+  top: -26px;
+  left: 18px;
+}
+.cloud-3::after {
+  width: 42px;
+  height: 42px;
+  top: -18px;
+  left: 64px;
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100vw + 320px));
+  }
+}
+
+/* ===== WAVES ===== */
+.waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  display: block;
+}
+
+.wave-back {
+  color: rgba(64, 185, 207, 0.45);
+  animation: waveSlide 14s linear infinite;
+}
+
+.wave-mid {
+  color: rgba(35, 156, 196, 0.55);
+  animation: waveSlide 9s linear infinite reverse;
+  bottom: -8px;
+}
+
+.wave-front {
+  color: rgba(20, 124, 168, 0.7);
+  animation: waveSlide 6s linear infinite;
+  bottom: -16px;
+}
+
+@keyframes waveSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .sun {
+    width: 170px;
+    height: 170px;
+    top: 2vh;
+    right: 3vw;
+  }
+  .waves {
+    height: 110px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sun,
+  .sun-rays-group,
+  .cloud,
+  .wave {
+    animation: none !important;
+  }
+}
