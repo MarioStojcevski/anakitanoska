@@ -1,1 +1,1 @@
-export const TARGET_ARRIVAL_TIME = "2026-05-15T21:30:00"
+export const TARGET_ARRIVAL_TIME = import.meta.env.VITE_TARGET_DATE || "2026-05-15T21:30:00"
